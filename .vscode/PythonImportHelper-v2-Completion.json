@@ -1,0 +1,133 @@
+[
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "cross_val_score",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "ic",
+        "importPath": "icecream",
+        "description": "icecream",
+        "isExtraImport": true,
+        "detail": "icecream",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "string",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "string",
+        "description": "string",
+        "detail": "string",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_model",
+        "kind": 2,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "def evaluate_model(x_train, y_train, x_test, y_test, model):\n    model.fit(x_train, y_train)\n    pred = model.predict(x_test)\n    scorings = cross_val_score(\n        model,\n        x_train,\n        y_train,\n        cv=3,\n        scoring=\"accuracy\"\n    )",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix_heatmap",
+        "kind": 2,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "def confusion_matrix_heatmap(clf, x_test, y_test):\n    confused = confusion_matrix(y_test, clf.predict(x_test),)\n    confused_normal = np.zeros((confused.shape[0], confused.shape[1]))\n    # ic(confused.shape(1))\n    for column in range(confused.shape[1]):\n        # print(column)\n        confused_normal[:, column] = (confused[:, column] / sum(confused[:, column]))\n    plt.ylim(-10, 10)\n    sns.heatmap(\n        confused_normal,",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "data_frame",
+        "kind": 5,
+        "importPath": "semantic",
+        "description": "semantic",
+        "peekOfCode": "data_frame = pd.read_csv('Roman_Urdu_DataSet_git.csv')\nnew_frame = data_frame[[\"comments\", \"tone\"]]\nsampled_data_frame = new_frame.sample(n=5000)\nsampled_data_frame.to_csv('data_set.csv', index=False)",
+        "detail": "semantic",
+        "documentation": {}
+    },
+    {
+        "label": "new_frame",
+        "kind": 5,
+        "importPath": "semantic",
+        "description": "semantic",
+        "peekOfCode": "new_frame = data_frame[[\"comments\", \"tone\"]]\nsampled_data_frame = new_frame.sample(n=5000)\nsampled_data_frame.to_csv('data_set.csv', index=False)",
+        "detail": "semantic",
+        "documentation": {}
+    },
+    {
+        "label": "sampled_data_frame",
+        "kind": 5,
+        "importPath": "semantic",
+        "description": "semantic",
+        "peekOfCode": "sampled_data_frame = new_frame.sample(n=5000)\nsampled_data_frame.to_csv('data_set.csv', index=False)",
+        "detail": "semantic",
+        "documentation": {}
+    },
+    {
+        "label": "STOPWORDS",
+        "kind": 5,
+        "importPath": "stopwords_urdu",
+        "description": "stopwords_urdu",
+        "peekOfCode": "STOPWORDS = ['ai', 'ayi', 'hy', 'hai', 'main', 'ki', 'tha', 'koi', 'ko', 'sy',\n             'woh', 'bhi', 'aur', 'wo', 'yeh', 'rha', 'hota', 'ho', 'ga', 'ka',\n             'le', 'lye', 'kr', 'kar', 'lye', 'liye', 'hotay', 'waisay', 'gya',\n             'gaya', 'kch', 'ab', 'thy', 'thay', 'houn', 'hain', 'han', 'to',\n             'is', 'hi', 'jo', 'kya', 'thi', 'se', 'pe', 'phr', 'wala', 'waisay',\n             'us', 'na', 'ny', 'hun', 'rha', 'raha', 'ja', 'rahay', 'abi',\n             'uski', 'ne', 'haan', 'acha', 'nai', 'sent', 'photo', 'you', 'kafi',\n             'gai', 'rhy', 'kuch', 'jata', 'aye', 'ya', 'dono', 'hoa', 'aese',\n             'de', 'wohi', 'jati', 'jb', 'krta', 'lg', 'rahi', 'hui', 'karna',\n             'krna', 'gi', 'hova', 'yehi', 'jana', 'jye', 'chal', 'mil', 'tu',",
+        "detail": "stopwords_urdu",
+        "documentation": {}
+    }
+]
